@@ -8,7 +8,7 @@ export default function Todos() {
   const navigate = useNavigate();
   const [searchParam, setSearchParam] = useSearchParams();
   if (!context) {
-    throw Error("raja-3");
+    throw Error("Context Not found");
   }
   const { todos } = context;
 

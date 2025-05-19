@@ -6,7 +6,7 @@ import TodoCount from "../../components/TodoCount/TodoCount";
 export default function AddTodo() {
   const context = useContext(TodoContext);
   if (!context) {
-    throw Error("wrong-raja");
+    throw Error("Context Not found");
   }
   const { dispatch } = context;
   const [text, setText] = useState<string>("");

@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function TodoDetail() {
   const context = useContext(TodoContext);
   if (!context) {
-    throw Error("raja-2");
+    throw Error("Context Not found");
   }
   const { todos, dispatch } = context;
   const { id } = useParams<{ id: string }>();
