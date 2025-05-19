@@ -1,5 +1,7 @@
 export default function About(){
-    return(<>
-            <h2>Hello welcom to about</h2>
-    </>)
+    return(
+    <div>
+            <h2 className="flex pad2 ">Hello welcome to about</h2>
+    </div>
+    )
 }

@@ -1,4 +1,4 @@
-// Router.tsx
+
 import { Route, Routes } from 'react-router-dom'
 import { type RouteItem, routes } from '../Route/Routes'
 import PrivateRouter from '../PrivateRouter/PrivateRoute'

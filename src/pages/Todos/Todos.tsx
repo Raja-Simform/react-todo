@@ -26,28 +26,30 @@ export default function Todos() {
     }
   }
   return (
-    <>
-      <h2>Welcome to my todo</h2>
+    <div className="max-w-3xl mx-auto p-6 mt-8">
+      <h2  className="text-3xl font-bold mb-4 text-gray-900">Welcome to my todo</h2>
       <TodoCount />
-      <div>
-        <input type="text" value={search} onChange={handleSearchChange} />
-        <button onClick={() => navigate("/todos/new")}>Add</button>
+      <div className="flex items-center gap-4 mb-6">
+        <input type="text" value={search} onChange={handleSearchChange} placeholder="Search Tdods..." className="flex-grow px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"/>
+        <button className="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition" onClick={() => navigate("/todos/new")}>Add</button>
       </div>
       {filterTodos.length === 0 ? (
-        <p>No todos found.</p>
+        <p className="text-center text-gray-500">No todos found.</p>
       ) : (
-        <ul>
+        <ul className="space-y-3">
           {filterTodos.map((todo) => (
-            <li key={todo.id} style={{ marginBottom: "0.5rem" }}>
-              <Link to={`/todos/${todo.id}`}>
+            <li key={todo.id} className="flex justify-between items-center border-b border-gray-200 pb-2">
+              <Link to={`/todos/${todo.id}`} className={`text-lg ${
+                  todo.done ? "line-through text-gray-400" : "text-gray-800"
+                } hover:text-green-600 transition`}>
                 {todo.done ? <s>{todo.text}</s> : todo.text}
               </Link>{" "}
-              <small style={{ color: "#666"  }}>(Added: {todo.date})</small>
+              <small className="text-gray-500">(Added: {todo.date})</small>
             </li>
           ))}
         </ul>
       )}
       <Outlet />
-    </>
+    </div>
   );
 }

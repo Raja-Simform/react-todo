@@ -24,27 +24,27 @@ export default function AddTodo() {
   }
 
   return (
-    <div>
+    <div className="max-w-md mx-auto p-6 bg-white rounded shadow-md mt-8">
       <TodoCount />
-      <h3>Add New Todo</h3>
-      <form onSubmit={handleSubmit}>
+      <h3 className="text-2xl font-semibold mb-4 text-gray-800">Add New Todo</h3>
+      <form onSubmit={handleSubmit} className="flex items-center gap-4">
         <input
           type="text"
           placeholder="Enter todo text"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          style={{ padding: "0.5rem", width: "300px" }}
+          className="flex-grow px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
         />
         <button
           type="submit"
-          style={{ marginLeft: "1rem", padding: "0.5rem 1rem" }}
+         className="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition"
         >
           Add
         </button>
       </form>
       <button
         onClick={() => navigate("/todos")}
-        style={{ marginTop: "1rem", background: "#cd1010" }}
+        className="mt-6 w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition"
       >
         Back to Todos
       </button>

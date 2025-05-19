@@ -6,8 +6,9 @@ interface PrivateRouterProps{
 }
 export default function PrivateRouter({children}:PrivateRouterProps){
    const token=localStorage.getItem('token');
-   if(token){
+   if(token==='7'){
     console.log("login");
+    
     return(
         children 
      )

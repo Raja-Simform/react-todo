@@ -1,16 +1,20 @@
-
-import './App.css'
-import {TodoProvider} from './store/TodoContext'
-import { Router } from './components/Route/Router'
+import "./App.css";
+import { TodoProvider } from "./store/TodoContext";
+import { Router } from "./components/Route/Router";
 
 function App() {
-
   return (
-    <>
-    <TodoProvider>
-      
-     
-      {/* <Routes>
+    <div >
+      <TodoProvider>
+        <Router />
+      </TodoProvider>
+    </div>
+  );
+}
+
+export default App;
+
+ {/* <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/todos' >
@@ -20,14 +24,3 @@ function App() {
         </Route>
         <Route path="*" element={<h2>Page Not Found</h2>}/>
       </Routes> */}
-      <Router/>
-      </TodoProvider>
-    </> 
-
-    
-   
-    
-  )
-}
-
-export default App

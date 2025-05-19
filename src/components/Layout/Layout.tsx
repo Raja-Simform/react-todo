@@ -5,12 +5,10 @@ function Layout() {
   return (
     <>
       <Navbar />
-
       <main>
         <Outlet />
       </main>
     </>
   );
 }
-
 export default Layout;
